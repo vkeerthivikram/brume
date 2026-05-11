@@ -1,0 +1,29 @@
+:root {
+  --brume-base: #f0f2fa;
+  --brume-surface: #e4e8f2;
+  --brume-overlay: #d8dee8;
+  --brume-mantle: #c0c8d8;
+  --brume-crust: #a8b0c4;
+  --brume-text: #1a2233;
+  --brume-subtext1: #2b364c;
+  --brume-subtext0: #404e65;
+  --brume-ice: #1890b0;
+  --brume-frost: #108098;
+  --brume-blue: #2870a0;
+  --brume-deepblue: #185880;
+  --brume-sky: #48a0c8;
+  --brume-teal: #208878;
+  --brume-mint: #38a880;
+  --brume-green: #288848;
+  --brume-yellow: #988830;
+  --brume-orange: #a87830;
+  --brume-peach: #b87850;
+  --brume-red: #983848;
+  --brume-maroon: #802838;
+  --brume-rose: #b84868;
+  --brume-pink: #b84878;
+  --brume-flamingo: #c05868;
+  --brume-purple: #6848a0;
+  --brume-lavender: #7858a8;
+  --brume-mauve: #884080;
+}

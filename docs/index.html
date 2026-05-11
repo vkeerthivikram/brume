@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mist">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brume — A frost-tinted color palette</title>
+  <meta name="description" content="An icy, frost-tinted color palette. 6 variants, 27 colors each, icy glass aesthetic.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="top-bar">
+    <div class="logo">Brume</div>
+    <div class="nav-links">
+      <a href="#palette">Palette</a>
+      <a href="#code">Code</a>
+      <a href="#usage">Usage</a>
+      <a href="https://github.com/vkeerthivikram/brume">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>Brume</h1>
+      <p class="tagline">A frost-tinted color palette — every color shifted through icy mist.</p>
+      <div class="hero-buttons">
+        <a href="#palette" class="btn btn-primary">Explore Palette</a>
+        <a href="#usage" class="btn btn-secondary">Get Started</a>
+      </div>
+    </section>
+
+    <div class="variant-bar">
+      <button class="variant-btn" data-variant="snow">Snow</button>
+      <button class="variant-btn" data-variant="fog">Fog</button>
+      <button class="variant-btn" data-variant="haze">Haze</button>
+      <button class="variant-btn" data-variant="dusk">Dusk</button>
+      <button class="variant-btn active" data-variant="mist">Mist</button>
+      <button class="variant-btn" data-variant="void">Void</button>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- PALETTE -->
+    <section id="palette">
+
+      <div class="palette-group">
+        <div class="palette-group-title">Glacier — The frozen depths</div>
+        <div class="color-row" id="group-glacier"></div>
+      </div>
+
+      <div class="palette-group">
+        <div class="palette-group-title">Snowfall — Text and mist</div>
+        <div class="color-row" id="group-snowfall"></div>
+      </div>
+
+      <div class="palette-group">
+        <div class="palette-group-title">Ice Crystal — Blues and cyans</div>
+        <div class="color-row" id="group-ice"></div>
+      </div>
+
+      <div class="palette-group">
+        <div class="palette-group-title">Aurora — The frost spectrum</div>
+        <div class="color-row" id="group-aurora"></div>
+      </div>
+
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CODE PREVIEW -->
+    <section id="code">
+      <div class="section-header">
+        <h2>Beautiful code to keep focused</h2>
+        <p>Each color is carefully chosen for syntax highlighting with balanced distribution across keywords, strings, types, and comments.</p>
+      </div>
+
+      <div class="code-preview">
+        <div class="code-preview-header">
+          <div class="code-preview-dot" style="background:var(--brume-red)"></div>
+          <div class="code-preview-dot" style="background:var(--brume-yellow)"></div>
+          <div class="code-preview-dot" style="background:var(--brume-green)"></div>
+          <span class="code-preview-title">brume.rs</span>
+        </div>
+        <div class="code-preview-body" id="code-preview-body"></div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- FEATURES -->
+    <section>
+      <div class="section-header">
+        <h2>Designed for the frozen aesthetic</h2>
+        <p>Brume brings the icy glass effect to every surface.</p>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <h3>Icy Glass</h3>
+          <p>Frosted glass panels with backdrop-filter blur and cyan-tinted borders. Every surface looks like frozen glass.</p>
+        </div>
+        <div class="feature-card">
+          <h3>6 Darkness Levels</h3>
+          <p>From Snow (lightest) to Void (deepest). Each variant maintains the same frost-tinted color relationships.</p>
+        </div>
+        <div class="feature-card">
+          <h3>19 Frost Accents</h3>
+          <p>A full color spectrum — Rose, Peach, Mint, Lavender and more — all shifted through the frost filter.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- USAGE -->
+    <section id="usage">
+      <div class="section-header">
+        <h2>Quick Start</h2>
+        <p>Use Brume in any project — CSS custom properties, JSON, or copy hex values directly.</p>
+      </div>
+
+      <h3 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--brume-subtext0);margin-bottom:12px;font-weight:600;">CSS Custom Properties</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre><span class="cm">/* Link to a variant */</span>
+&lt;link rel="stylesheet" href="ports/css/brume-<span class="str">mist</span>.css"&gt;
+
+<span class="cm">/* Use in your styles */</span>
+<span class="kw">.glass-panel</span> {
+  <span class="ty">background</span>: <span class="fn">rgba</span>(<span class="num">30</span>, <span class="num">50</span>, <span class="num">70</span>, <span class="num">0.35</span>);
+  <span class="ty">backdrop-filter</span>: <span class="fn">blur</span>(<span class="num">14px</span>);
+  <span class="ty">border</span>: <span class="num">1px</span> solid <span class="fn">rgba</span>(<span class="num">126</span>, <span class="num">200</span>, <span class="num">232</span>, <span class="num">0.12</span>);
+}</pre>
+      </div>
+
+      <h3 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--brume-subtext0);margin-bottom:12px;margin-top:28px;font-weight:600;">JSON Palette</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre><span class="kw">import</span> palette <span class="kw">from</span> <span class="str">'./palette/colors.json'</span>;
+
+<span class="kw">const</span> mist = palette.<span class="fn">variants</span>.<span class="fn">mist</span>.<span class="fn">colors</span>;
+console.<span class="fn">log</span>(mist.<span class="fn">ice</span>); <span class="cm">// #8ad0ea</span></pre>
+      </div>
+    </section>
+
+    <footer>
+      <p>Brume by <a href="https://github.com/vkeerthivikram">vkeerthivikram</a> &middot; MIT License</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">Copied!</div>
+
+  <script>
+    var PALETTE = {
+      snow: {
+        base:"#f0f2fa",surface:"#e4e8f2",overlay:"#d8dee8",mantle:"#c0c8d8",crust:"#a8b0c4",
+        text:"#1a2233",subtext1:"#2b364c",subtext0:"#404e65",
+        ice:"#1890b0",frost:"#108098",blue:"#2870a0",deepblue:"#185880",sky:"#48a0c8",
+        teal:"#208878",mint:"#38a880",green:"#288848",yellow:"#988830",
+        orange:"#a87830",peach:"#b87850",red:"#983848",maroon:"#802838",
+        rose:"#b84868",pink:"#b84878",flamingo:"#c05868",purple:"#6848a0",
+        lavender:"#7858a8",mauve:"#884080"
+      },
+      fog: {
+        base:"#d8e0f0",surface:"#c8d2e4",overlay:"#b8c4d8",mantle:"#a0aec8",crust:"#8898b0",
+        text:"#1a2233",subtext1:"#2b364c",subtext0:"#404e65",
+        ice:"#3090b8",frost:"#2888a8",blue:"#3878a8",deepblue:"#285888",sky:"#58a8c8",
+        teal:"#288880",mint:"#40a888",green:"#389858",yellow:"#a89838",
+        orange:"#b87840",peach:"#c88860",red:"#a84858",maroon:"#903848",
+        rose:"#c85878",pink:"#c85888",flamingo:"#d06878",purple:"#7858a0",
+        lavender:"#8868a8",mauve:"#984888"
+      },
+      haze: {
+        base:"#303848",surface:"#384258",overlay:"#424e68",mantle:"#505c78",crust:"#5e6a88",
+        text:"#c8d0e0",subtext1:"#a0a8b8",subtext0:"#788098",
+        ice:"#58b8d8",frost:"#48a8c0",blue:"#5088b0",deepblue:"#387090",sky:"#70b8d0",
+        teal:"#48a8a0",mint:"#58b8a8",green:"#50a868",yellow:"#c0a850",
+        orange:"#c88850",peach:"#d09868",red:"#c06070",maroon:"#a84858",
+        rose:"#d87090",pink:"#d870a0",flamingo:"#e08090",purple:"#9070a8",
+        lavender:"#a080b0",mauve:"#b06098"
+      },
+      dusk: {
+        base:"#242c3a",surface:"#2c3648",overlay:"#364050",mantle:"#424e60",crust:"#4e5a70",
+        text:"#c0c8d8",subtext1:"#98a0b0",subtext0:"#707890",
+        ice:"#68c0d8",frost:"#58b0c8",blue:"#5898b8",deepblue:"#4080a0",sky:"#78c0d8",
+        teal:"#40a8a0",mint:"#50b0a0",green:"#48a060",yellow:"#c0a848",
+        orange:"#d09058",peach:"#d8a070",red:"#c86070",maroon:"#b04858",
+        rose:"#e07898",pink:"#e078a8",flamingo:"#e88898",purple:"#9878b0",
+        lavender:"#a888b8",mauve:"#c068a0"
+      },
+      mist: {
+        base:"#1a2233",surface:"#222c3f",overlay:"#2b364c",mantle:"#354158",crust:"#3f4d65",
+        text:"#c8cdd8",subtext1:"#a0a8b8",subtext0:"#788098",
+        ice:"#8ad0ea",frost:"#68b8c8",blue:"#6fa0c8",deepblue:"#5080a8",sky:"#98d0e8",
+        teal:"#78b8b0",mint:"#88c0b0",green:"#68b078",yellow:"#c8b060",
+        orange:"#d09060",peach:"#d8a078",red:"#c86878",maroon:"#b04858",
+        rose:"#e888a0",pink:"#e888b0",flamingo:"#f098a0",purple:"#a088b8",
+        lavender:"#b098c0",mauve:"#c878a8"
+      },
+      void: {
+        base:"#0e1420",surface:"#141c2e",overlay:"#1c263a",mantle:"#253048",crust:"#2e3a55",
+        text:"#b8c0d0",subtext1:"#9098a8",subtext0:"#6a7288",
+        ice:"#90d8f0",frost:"#78c8d8",blue:"#78a8d0",deepblue:"#5888b0",sky:"#a0d8f0",
+        teal:"#80c0b8",mint:"#90c8b8",green:"#70b880",yellow:"#d0b868",
+        orange:"#d89868",peach:"#e0a880",red:"#d07080",maroon:"#b85868",
+        rose:"#f098b0",pink:"#f098c0",flamingo:"#f8a8a8",purple:"#a890c0",
+        lavender:"#b8a0c8",mauve:"#d888b0"
+      }
+    };
+
+    var GROUPS = {
+      glacier: ["base","surface","overlay","mantle","crust"],
+      snowfall: ["text","subtext1","subtext0"],
+      ice: ["ice","frost","blue","deepblue","sky"],
+      aurora: ["teal","mint","green","yellow","orange","peach","red","maroon","rose","pink","flamingo","purple","lavender","mauve"]
+    };
+
+    function isLight(hex) {
+      var r = parseInt(hex.slice(1,3),16);
+      var g = parseInt(hex.slice(3,5),16);
+      var b = parseInt(hex.slice(5,7),16);
+      return (r*299 + g*587 + b*114) / 1000 > 140;
+    }
+
+    function colorCard(name, hex) {
+      var cls = isLight(hex) ? 'dark-text' : 'light-text';
+      return '<div class="color-card ' + cls + '" style="background:' + hex + '" onclick="copyHex(\'' + hex + '\')" title="Click to copy">' +
+        '<div class="color-name">' + name + '</div>' +
+        '<div class="color-hex">' + hex + '</div></div>';
+    }
+
+    function render(variant) {
+      var c = PALETTE[variant];
+      Object.keys(GROUPS).forEach(function(group) {
+        var el = document.getElementById("group-" + group);
+        if (el) el.innerHTML = GROUPS[group].map(function(n) { return colorCard(n, c[n]); }).join("");
+      });
+      renderCodePreview(c);
+    }
+
+    function renderCodePreview(c) {
+      document.getElementById("code-preview-body").innerHTML =
+        '<span class="cm">// brume.rs — Frost detection module</span>\n' +
+        '<span class="kw">use</span> <span class="txt">brume</span>::<span class="ty">{Ice, Mist, Frost}</span>;\n\n' +
+        '<span class="kw">fn</span> <span class="fn">detect_frost</span><span class="txt">(</span><span class="txt">temp</span>: <span class="ty">f64</span><span class="txt">,</span> <span class="txt">humidity</span>: <span class="ty">f64</span><span class="txt">)</span> <span class="op">-&gt;</span> <span class="ty">Option</span>&lt;<span class="ty">Frost</span>&gt; <span class="txt">{</span>\n' +
+        '    <span class="kw">let</span> <span class="txt">dew_point</span> <span class="op">=</span> <span class="txt">temp</span> <span class="op">-</span> (<span class="num">100.0</span> <span class="op">-</span> <span class="txt">humidity</span>) <span class="op">/</span> <span class="num">5.0</span>;\n' +
+        '    <span class="kw">let</span> <span class="txt">mist</span> <span class="op">=</span> <span class="ty">Mist</span>::<span class="fn">from_humidity</span>(<span class="txt">humidity</span>);\n\n' +
+        '    <span class="kw">if</span> <span class="txt">dew_point</span> <span class="op">&lt;=</span> <span class="num">0.0</span> <span class="op">&&</span> <span class="txt">mist</span>.<span class="fn">is_heavy</span>() <span class="txt">{</span>\n' +
+        '        <span class="kw">match</span> <span class="ty">Ice</span>::<span class="fn">crystalize</span>(<span class="txt">temp</span>, <span class="txt">dew_point</span>) <span class="txt">{</span>\n' +
+        '            <span class="ty">Some</span>(<span class="txt">crystal</span>) <span class="op">=&gt;</span> <span class="ty">Some</span>(<span class="txt">crystal</span>.<span class="fn">into_frost</span>()),\n' +
+        '            <span class="ty">None</span> <span class="op">=&gt;</span> <span class="fn">log</span>(<span class="str">"No frost detected"</span>),\n' +
+        '        <span class="txt">}</span>\n' +
+        '    <span class="txt">}</span> <span class="kw">else</span> <span class="txt">{</span>\n' +
+        '        <span class="ty">None</span>\n' +
+        '    <span class="txt">}</span>\n' +
+        '<span class="txt">}</span>';
+    }
+
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex).catch(function() {});
+      showToast("Copied " + hex);
+    }
+
+    function copyCode(btn) {
+      var code = btn.parentElement.querySelector("pre").textContent;
+      navigator.clipboard.writeText(code).catch(function() {});
+      showToast("Copied to clipboard");
+    }
+
+    function showToast(msg) {
+      var toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(function() { toast.classList.remove("show"); }, 2000);
+    }
+
+    document.querySelectorAll(".variant-btn").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        document.querySelectorAll(".variant-btn").forEach(function(b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        var v = btn.dataset.variant;
+        document.documentElement.setAttribute("data-theme", v);
+        render(v);
+      });
+    });
+
+    render("mist");
+  </script>
+</body>
+</html>
