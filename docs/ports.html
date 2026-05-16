@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mist">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ports — Brume</title>
+  <meta name="description" content="Official ports of the Brume color palette for editors, terminals, browsers, and more.">
+  <link rel="stylesheet" href="ports.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="top-bar">
+    <div class="logo"><a href="index.html">Brume</a></div>
+    <div class="nav-links">
+      <a href="index.html#palette">Palette</a>
+      <a href="index.html#code">Code</a>
+      <a href="ports.html" class="active">Ports</a>
+      <a href="index.html#usage">Usage</a>
+      <a href="https://github.com/vkeerthivikram/brume">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>Ports</h1>
+      <p class="tagline">Brume adapted for your favorite tools. Editors, terminals, browsers, and more.</p>
+      <div class="search-wrap">
+        <input type="text" id="search" placeholder="Search ports..." autocomplete="off">
+      </div>
+    </section>
+
+    <div class="filter-bar" id="filter-bar"></div>
+
+    <div class="ports-grid" id="ports-grid"></div>
+
+    <div class="empty-state" id="empty-state" style="display:none">
+      <p>No ports match your search.</p>
+    </div>
+
+    <footer>
+      <p>Brume by <a href="https://github.com/vkeerthivikram">vkeerthivikram</a> &middot; MIT License</p>
+    </footer>
+  </div>
+
+  <script>
+    var CATEGORIES = [];
+    var PORTS = [];
+
+    function init(data) {
+      var cats = {};
+      data.forEach(function(p) { cats[p.category] = true; });
+      CATEGORIES = Object.keys(cats).sort();
+
+      PORTS = data.map(function(p, i) {
+        return Object.assign({}, p, { _i: i });
+      });
+
+      renderFilters();
+      render();
+    }
+
+    function renderFilters() {
+      var bar = document.getElementById('filter-bar');
+      var html = '<button class="filter-btn active" data-cat="all">All</button>';
+      CATEGORIES.forEach(function(c) {
+        var count = PORTS.filter(function(p) { return p.category === c; }).length;
+        html += '<button class="filter-btn" data-cat="' + c + '">' + c + ' <span class="filter-count">' + count + '</span></button>';
+      });
+      bar.innerHTML = html;
+
+      bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          render();
+        });
+      });
+    }
+
+    function render() {
+      var cat = document.querySelector('.filter-btn.active').dataset.cat;
+      var q = (document.getElementById('search').value || '').toLowerCase().trim();
+
+      var filtered = PORTS.filter(function(p) {
+        var matchCat = cat === 'all' || p.category === cat;
+        var matchQ = !q || p.name.toLowerCase().indexOf(q) !== -1 || p.description.toLowerCase().indexOf(q) !== -1 || p.category.toLowerCase().indexOf(q) !== -1;
+        return matchCat && matchQ;
+      });
+
+      var grid = document.getElementById('ports-grid');
+      var empty = document.getElementById('empty-state');
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = '';
+        return;
+      }
+
+      empty.style.display = 'none';
+      grid.innerHTML = filtered.map(function(p) { return portCard(p); }).join('');
+    }
+
+    function portCard(p) {
+      var links = (p.links || []).map(function(l) {
+        return '<a href="' + l.url + '" target="_blank" rel="noopener" class="port-link">' + l.label + ' &#8599;</a>';
+      }).join('');
+
+      return '<div class="port-card" data-category="' + p.category + '">' +
+        '<div class="port-card-header">' +
+          '<span class="port-category">' + p.category + '</span>' +
+        '</div>' +
+        '<h3>' + p.name + '</h3>' +
+        '<p>' + p.description + '</p>' +
+        (links ? '<div class="port-links">' + links + '</div>' : '') +
+      '</div>';
+    }
+
+    document.getElementById('search').addEventListener('input', render);
+
+    fetch('../ports/meta.json')
+      .then(function(r) { return r.json(); })
+      .then(init)
+      .catch(function(err) {
+        document.getElementById('ports-grid').innerHTML = '<p style="color:var(--brume-subtext0)">Failed to load ports.</p>';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "vscode",
+    "name": "VS Code",
+    "category": "Editors",
+    "description": "Brume Frost Theme — all 6 variants. Available on the Marketplace and as VSIX.",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/vkeerthivikram/brume-vscode" }
+    ]
+  },
+  {
+    "id": "css",
+    "name": "CSS Custom Properties",
+    "category": "Web",
+    "description": "Drop-in CSS files for each variant. Use Brume colors as custom properties in any web project.",
+    "links": [
+      { "label": "Source", "url": "https://github.com/vkeerthivikram/brume/tree/master/ports/css" }
+    ]
+  }
+]
